@@ -57,4 +57,40 @@ La oportunidad es la segunda etapa del modelo y se refiere a la condición previ
 La racionalización es el mecanismo psicológico que explica por qué los defraudadores no se abstienen de cometer fraude y consideran aceptable su conducta.
 
 Si los tres elementos están presentes, las posibilidades de que se produzca fraude son altas.
+*****************************************
+## DETECCIÓN DE FRAUDE X PREVENCIÓN DE FRAUDE
+Dos componentes que son partes esenciales de casi cualquier estrategia eficaz para combatir el fraude implican la detección y la prevención del fraude.
+La detección de fraude se refiere a la capacidad de reconocer o descubrir actividades fraudulentas. La prevención del fraude se refiere a las medidas que se pueden tomar para prevenir o reducir el fraude.
 
+La diferencia entre ambos es clara: el primero es un enfoque reactivo, mientras que el segundo es un enfoque proactivo. Ambas estrategias pueden y probablemente deberían usarse de manera complementaria para perseguir el objetivo compartido de reducir el fraude. 
+
+Sin embargo, las acciones preventivas cambiarán las estrategias de fraude y, en consecuencia, el impacto del poder de detección. La instalación de un sistema de detección hará que los estafadores se adapten y cambien su comportamiento, por lo que el propio sistema de detección acabará socavando su propio poder de detección. Por tanto, la detección y prevención del fraude no son independientes y deben alinearse y considerarse como un todo.
+
+**************************
+## SISTEMA DE REGLAS
+Depender únicamente de la tecnología para aprobar o desaprobar pedidos ya no es suficiente; también es necesario confiar en análisis humanos sofisticados. Esto se debe a que, si bien los modelos estadísticos son herramientas valiosas en la lucha contra el fraude, también requieren aportes y juicio humanos para crear una solución integral que produzca los mejores resultados. No hay duda de que las herramientas de análisis automático son componentes extremadamente importantes en los programas de reducción del fraude, pero depender únicamente de ellas puede no ser eficiente a largo plazo. La razón es que la tecnología por sí sola no es eficaz para definir o identificar todos los aspectos subjetivos que rodean una transacción fraudulenta.
+****************************
+## Problema
+Una empresa ofrece seguros de propiedad en la ciudad de Nueva York, Estados Unidos. Con el objetivo de calcular el valor del seguro de la mejor manera posible, la empresa nos contrató como Data Scientist, para analizar y detectar fraudes en los datos de transacciones inmobiliarias de toda la ciudad. Los datos son públicos y proporcionados por el portal de datos abiertos de la ciudad de Nueva York.
+
+La empresa necesita una puntuación para cada transacción con el fin de comprobar aquellas con mayor posibilidad de fraude. El Fraud Score debe ser lo más preciso posible y se debe generar uno para cada transacción.
+
+Cabe señalar que no existe información previa sobre si una transacción fue fraudulenta o no.
+**********************************
+## Fuente de datos:
+Para este proyecto (partes 1 y 2), utilizaremos datos reales disponibles públicamente. Se puede acceder a los datos en el portal de datos abiertos de la ciudad de Nueva York. Enlace -> https://data.cityofnewyork.us/Housing-Development/Property-Valuation-and-Assessment-Data/rgy2-tti8
+
+<p align="center">
+  <img width="1000" height="200" src="https://github.com/EricPassosScience/Fraud_Detector-Real_Estate_Transactions_Part2/assets/97414922/63353618-1576-4ae6-996c-3aef69518448">
+</p>
+
+En el mismo enlace podemos encontrar el diccionario de datos que será fundamental para nuestro análisis.
+*****************************
+## MODELADO
+Existen varias técnicas para el análisis de detección de fraude. Para nuestro problema, utilizamos el enfoque de aprendizaje no supervisado, creando puntuaciones de fraude para cada transacción inmobiliaria.
+
+Las técnicas utilizadas fueron PCA (Análisis de Componentes Principales) en escala Z, y una técnica de Deep Learning no supervisada conocida como Autoencoder. Se generaron dos puntuaciones, una para cada técnica, que se unieron al final.
+
+La salida del PCA, los diez componentes principales, se utilizarán como datos de entrada para el Autoencoder.
+
+En Autoencoder, aunque la precisión del modelo es baja, su tasa de error también lo es, por lo que tenemos un modelo utilizable.
