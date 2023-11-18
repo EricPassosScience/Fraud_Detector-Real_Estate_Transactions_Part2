@@ -132,7 +132,7 @@ Y en 4D:
 <p align="center">
   <img width="300" height="250" src="https://github.com/EricPassosScience/Fraud_Detector-Real_Estate_Transactions_Part2/assets/97414922/0a317318-2b95-4461-8280-3066ec5c82f4">
 </p>
-
+**********************************
 ## Referencias
 - Matrix Rank -> https://www.mathsisfun.com/algebra/matrix-rank.html
 - En Python, la biblioteca pandas ofrece una función que calcula la "Matriz Rank", puedes consultar la documentación -> https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rank.html
