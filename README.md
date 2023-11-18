@@ -94,3 +94,46 @@ Las técnicas utilizadas fueron PCA (Análisis de Componentes Principales) en es
 La salida del PCA, los diez componentes principales, se utilizarán como datos de entrada para el Autoencoder.
 
 En Autoencoder, aunque la precisión del modelo es baja, su tasa de error también lo es, por lo que tenemos un modelo utilizable.
+*************************************
+## Cálculo de la puntuación final - "Matrix Rank"
+La puntuación final se calculará utilizando el “matrix rank”, que es el número de filas distintas de cero en la matriz, cuando se escribe en forma escalada por filas. De manera equivalente, corresponde al número de filas o columnas linealmente independientes de la matriz. La característica de una matriz tiene varias implicaciones con respecto a la independencia lineal y la dimensión de un espacio vectorial.
+
+¿Y qué significa este lineal? Lineal significa que podemos multiplicar por una constante, pero sin potencias ni otras funciones. La constante puede ser cualquier número real (0, 1, cualquier número entero, fracción, negativos, etc.).
+
+¿Y dependientes? Dependencia significa que dependen unos de otros, en otras palabras, podemos sumar algunos (después de multiplicarlos por una constante) para formar otro. Imagina que son vectores (tienen dirección y longitud). ¿Podemos combinar los otros vectores (acercándolos o alejándolos según sea necesario) para obtener el mismo resultado?
+
+<p align="center">
+  <img width="600" height="500" src="https://github.com/EricPassosScience/Fraud_Detector-Real_Estate_Transactions_Part2/assets/97414922/d8db02aa-75bb-4786-8e50-4c2074ca7c66">
+</p>
+
+Tenga en cuenta que 'a' y 'b' son linealmente independientes: no podemos usar 'a' sola para llegar a donde está 'b', o viceversa. Lo mismo ocurre con "b" y "c", o con "a" y "c". Pero 'a', 'b' y 'c' son juntos linealmente dependientes. Solo pensando en 'a' y 'b': podemos llegar a cualquier parte usando estos dos vectores:
+
+<p align="center">
+  <img width="600" height="500" src="https://github.com/EricPassosScience/Fraud_Detector-Real_Estate_Transactions_Part2/assets/97414922/a24acda9-8afb-438b-904e-aff9a14211e4">
+</p>
+
+Cuando los vectores son linealmente independientes y cubren un espacio completo, decimos que son una "base" de ese espacio. Por tanto, 'a' y 'b' son bases del plano 2D.
+Nota: Espacio es un término general que cubre 1, 2, 3 o dimensiones superiores, pero a menudo lo llamamos plano espacial 2D.
+Por tanto, 'a' y 'b' son tan útiles como los ejes x,y. Y lo mismo podría decirse de 2 vectores linealmente independientes cualesquiera en el plano 2D.
+El par más básico de vectores linealmente independientes son (1,0) y (0,1) que forman la matriz identidad 2x2:((1 0)¦(0 1)). Básicamente forman los conocidos ejes x, y:
+
+<p align="center">
+  <img width="600" height="500" src="https://github.com/EricPassosScience/Fraud_Detector-Real_Estate_Transactions_Part2/assets/97414922/53bcdf3e-d936-4c74-894c-ba73f26ed723">
+</p>
+
+Y en 3D:
+
+<p align="center">
+  <img width="600" height="500" src="https://github.com/EricPassosScience/Fraud_Detector-Real_Estate_Transactions_Part2/assets/97414922/e2890449-2b52-49b0-9871-f470b4b11a6b">
+</p>
+
+Y en 4D:
+
+<p align="center">
+  <img width="300" height="250" src="https://github.com/EricPassosScience/Fraud_Detector-Real_Estate_Transactions_Part2/assets/97414922/0a317318-2b95-4461-8280-3066ec5c82f4">
+</p>
+
+## Referencias
+- Matrix Rank -> https://www.mathsisfun.com/algebra/matrix-rank.html
+- En Python, la biblioteca pandas ofrece una función que calcula la "Matriz Rank", puedes consultar la documentación -> https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rank.html
+
